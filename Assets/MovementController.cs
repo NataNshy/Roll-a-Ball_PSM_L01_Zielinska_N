@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
+    public Text sText; //score
+    public Text Text1;
     public int score;
+   
     
 
     Rigidbody kula;
     public float thrust = 5;
     public float bthrust = -5;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +49,17 @@ public class MovementController : MonoBehaviour
         {
 
             kula.AddForce(thrust, 0, 0);
+        }
+    }
+    public void CollectScore()
+    {
+        score += 1;
+        Debug.Log("+1 punkt!");
+        sText.text = "Score: " + score;
+        if (score >= 4)
+        {
+            Debug.Log("Koniec :3 Suma punktów: " + score);
+            Text1.text = "Koniec :3";
         }
     }
 }
