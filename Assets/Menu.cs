@@ -7,8 +7,8 @@ public class Menu : MonoBehaviour
 {
     public void StartG()
     {
-        Debug.Log("Scene loading: " + scenePaths[1]);
-        SceneManager.LoadScene(scenePaths[1], LoadSceneMode.Single);
+      //  Debug.Log("Scene loading: " + scenePaths[1]);
+      //  SceneManager.LoadScene(scenePaths[1], LoadSceneMode.Single);
     }
 
     public void Options()
