@@ -7,28 +7,28 @@ public class Menu : MonoBehaviour
 {
     public void StartG()
     {
-      //  Debug.Log("Scene loading: " + scenePaths[1]);
-      //  SceneManager.LoadScene(scenePaths[1], LoadSceneMode.Single);
+        //  Debug.Log("Scene loading: " + scenePaths[1]);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
-    public void Options()
+    public void Next()
     {
+
+        if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        else
+
+            SceneManager.LoadScene(0);
 
     }
 
     public void ExitG()
     {
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Application.Quit();
     }
 }
+
+   
+
