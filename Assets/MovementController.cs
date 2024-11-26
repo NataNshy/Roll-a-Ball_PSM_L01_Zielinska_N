@@ -72,4 +72,16 @@ public class MovementController : MonoBehaviour
             Text1.text = "Koniec :3";
         }
     }
+    public void CollectScoreBanan()
+    {
+        score += 2;
+        Debug.Log("+2 punkty!");
+        sText.text = "Score: " + score;
+        if (score >= 4)
+        {
+            Debug.Log("Koniec :3 Suma punktów: " + score);
+            Text1.text = "Koniec :3";
+        }
+
+    }
 }
