@@ -70,6 +70,7 @@ public class MovementController : MonoBehaviour
         {
             Debug.Log("Koniec :3 Suma punktów: " + score);
             Text1.text = "Koniec :3";
+            StartCoroutine(WaitAndLoadNextScene());
         }
     }
     public void CollectScoreBanan()
@@ -81,7 +82,13 @@ public class MovementController : MonoBehaviour
         {
             Debug.Log("Koniec :3 Suma punktów: " + score);
             Text1.text = "Koniec :3";
+            StartCoroutine(WaitAndLoadNextScene());
         }
-
     }
+    IEnumerator WaitAndLoadNextScene()
+    {
+        yield return new WaitForSeconds(3f); // Czekaj 2 sekundy
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // PrzejdŸ do nastêpnej sceny
+    }
+
 }

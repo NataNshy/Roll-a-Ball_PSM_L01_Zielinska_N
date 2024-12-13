@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void StartG()
+    public void lvl1()
     {
         //  Debug.Log("Scene loading: " + scenePaths[1]);
         SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
+
+    public void lvl2()
+    {
+        
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 
     public void Next()
