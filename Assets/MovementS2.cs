@@ -2,42 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementS : MonoBehaviour
+public class MovementS2 : MonoBehaviour
 {
     public float speed = 2;
-    public float minX = -3;
-    public float maxX = 3;
-    private bool left = false;
+    public float minZ = -3;
+    public float maxZ = 3;
+    public bool up = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+
         Vector3 v = transform.position;
-        float sx = speed * Time.deltaTime;
-        if (left)
+        float sz = speed * Time.deltaTime;
+        if (up)
         {
-            v.x = v.x - sx;
-            if (v.x <= minX)
+            v.z = v.z - sz;
+            if (v.z <= minZ)
             {
-                v.x = minX;
-                left = false;
+                v.z = minZ;
+                up = false;
             }
         }
         else
         {
-            v.x = v.x + sx;
-            if (v.x >= maxX)
+            v.z = v.z + sz;
+            if (v.z >= maxZ)
             {
-                v.x = maxX;
-                left = true;
+                v.z = maxZ;
+                up = true;
             }
         }
         transform.position = v;
