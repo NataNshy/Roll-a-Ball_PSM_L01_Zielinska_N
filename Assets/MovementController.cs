@@ -11,22 +11,22 @@ public class MovementController : MonoBehaviour
     public Text sText; //score
     public Text Text1;
     public int score;
-   
-    
+
+
 
     Rigidbody kula;
     public float thrust = 5;
     public float bthrust = -5;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        kula = GetComponent<Rigidbody>(); //biezrze to co ma dodany rigidbody
+        kula = GetComponent<Rigidbody>(); //biezrze dodane rigidbody
         Debug.Log("Dzien dobry!");
     }
     private void Update()
-    {
+    { //menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
@@ -39,8 +39,8 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            
-            kula.AddForce(0, 0 ,thrust);
+
+            kula.AddForce(0, 0, thrust);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -61,6 +61,7 @@ public class MovementController : MonoBehaviour
             kula.AddForce(thrust, 0, 0);
         }
     }
+
     public void CollectScore()
     {
         score += 1;
@@ -81,14 +82,14 @@ public class MovementController : MonoBehaviour
         if (score >= 4)
         {
             Debug.Log("Koniec :3 Suma punktów: " + score);
-            Text1.text = "Koniec :3";
+            Text1.text = "Koniec";
             StartCoroutine(WaitAndLoadNextScene());
         }
     }
     IEnumerator WaitAndLoadNextScene()
     {
-        yield return new WaitForSeconds(3f); // Czekaj 2 sekundy
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // PrzejdŸ do nastêpnej sceny
+        yield return new WaitForSeconds(3f); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // next scena
     }
 
-}
+} 

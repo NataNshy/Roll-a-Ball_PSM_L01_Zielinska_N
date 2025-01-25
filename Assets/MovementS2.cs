@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Movement scianki
 public class MovementS2 : MonoBehaviour
 {
     public float speed = 2;

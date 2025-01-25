@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
-
+//Score, dzwiek
 
 
 public class Collectible : MonoBehaviour
@@ -38,7 +38,7 @@ public class Collectible : MonoBehaviour
                 audioSource.PlayOneShot(pickupSound);
             }
 
-            // wy³¹czenie renderowania?
+            // wy³¹czenie renderowania obiektu?
             if (meshRenderer != null)
             {
                 meshRenderer.enabled = false;
